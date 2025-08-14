@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Kingsley's presentation</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Font Awesome icons (free version) -->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap) -->
+  <link href="css/styles.css" rel="stylesheet" />
+  <link href="css/project.css" rel="stylesheet" />
+  <style>
+      .text-gradient{
+    background: linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent !important;
+    display: inline-block;
+  }
+    /* Styles iframe arrière-plan */
+    #background-probe {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      z-index: 0;
+      opacity: 0.3;
+      pointer-events: none; /* désactivé par défaut */
+      transition: opacity 0.3s ease, z-index 0.3s ease;
+    }
+    #background-probe.active {
+      pointer-events: auto;
+      opacity: 1;
+      z-index: 15;
+    }
+    /* Bouton de toggle en bas à droite */
+    #toggleFrame {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      padding: 10px 16px;
+      background-color: rgba(0, 0, 0, 0.1);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      transition: background-color 0.3s ease;
+    }
+    #toggleFrame:hover {
+      background-color: rgba(0, 123, 255, 1);
+    }
+  </style>
+
+</head>
+<body id="page-top">
+<!-- Bouton pour basculer interaction iframe -->
+<button id="toggleFrame">Mit dem Hintergrund interagieren</button>
+
+<!-- Iframe en arrière-plan -->
+<iframe src="pro.html" id="background-probe" aria-hidden="true"></iframe>
+
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container px-4 px-lg-5">
+    <a class="text-gradient navbar-brand" href="#page-top">HOME</a>
+    <button class="text-gradient navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto">
+        <li class="text-gradient nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="text-gradient nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="text-gradient nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Masthead-->
+<header class="masthead">
+  <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+    <div class="d-flex justify-content-center">
+      <div class="text-center">
+        <h1 class=" mx-auto my-0 text-gradient text-uppercase">Kingsley Nguena</h1>
+        <h2 class="text-white-50 mx-auto mt-2 mb-5">Hallo, ich bin <span class="text-gradient"><strong>Kingsley Nguena</strong></span>, Student in Informatik an der THM in Gießen. Sie erfahren mehr über meine Projekte, meinen Werdegang und wie Sie mich ganz einfach kontaktieren können..</h2>
+        <a class="btn btn-primary" href="about.html">Get Started</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Footer-->
+<footer class="footer bg-black small text-center text-white-50">
+  <div class="text-gradient container px-4 px-lg-5">Copyright © My Portfolio 2025</div>
+</footer>
+
+<!-- Bootstrap core JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS -->
+<script src="js/scripts.js"></script>
+<!-- SB Forms JS -->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+<script>
+  const btn = document.getElementById('toggleFrame');
+  const iframe = document.getElementById('background-probe');
+
+  btn.addEventListener('click', () => {
+    if (iframe.classList.contains('active')) {
+      iframe.classList.remove('active');
+      btn.textContent = 'Interagir arrière-plan';
+    } else {
+      iframe.classList.add('active');
+      btn.textContent = 'Retour accueil';
+    }
+  });
+</script>
+</body>
+</html>
